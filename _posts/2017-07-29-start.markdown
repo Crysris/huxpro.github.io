@@ -2,7 +2,7 @@
 layout:     post
 title:      "写在梦想开始的地方"
 subtitle:   "咸鱼对未来的规划"
-date:       2017-07-30 00:02:00
+date:       2017-07-29 00:02:00
 author:     "Chris"
 header-img: "img/Color Burst 2"
 header-mask: 0.3
@@ -28,7 +28,7 @@ tags:
 
 
 
-##暑期规划
+## 暑期规划
 
 根据在高中的经验，带的书越多，看的就越少，于是这次暑假一本书都没带回家(ಥ_ಥ)
 

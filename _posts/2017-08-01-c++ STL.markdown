@@ -1,0 +1,25 @@
+---
+layout:     post
+title:      "从零开始实现一个STL"
+subtitle:   "C++学习之路"
+date:       2017-08-01 00:02:00
+author:     "Chris"
+header-img: "img/Color Burst 2"
+header-mask: 0.3
+catalog:    true
+tags:
+    - c++
+	- STL
+	- 编程
+---
+
+
+> 熟悉C++的第一步，自己实现STL
+
+
+## 前言
+
+准备在暑假学机器学习的过程中练习C++，从零开始实现一个STL
+
+
+
