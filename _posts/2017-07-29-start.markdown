@@ -4,7 +4,7 @@ title:      "写在梦想开始的地方"
 subtitle:   "咸鱼对未来的规划"
 date:       2017-07-29 00:02:00
 author:     "Chris"
-header-img: "img/Color Burst 2"
+header-img: "img/Yosemite 4"
 header-mask: 0.3
 catalog:    true
 tags:
