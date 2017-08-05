@@ -2,17 +2,16 @@
 layout:     post
 title:      "写在梦想开始的地方"
 subtitle:   "咸鱼对未来的规划"
-date:       2017-07-29 00:02:00
+date:       2017-07-29 23:00:00
 author:     "Chris"
-header-img: "img/Yosemite 4"
+header-img: "img/Yosemite 4.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
-    - 介绍
-	- 规划
-	- 编程
+    - 前端开发
+    - JavaScript
+    - PWA
 ---
-
 
 > 7月9号到7月26号，半个月的暑期实训结束了，也是大学最后一次实训。
 
@@ -33,7 +32,5 @@ tags:
 根据在高中的经验，带的书越多，看的就越少，于是这次暑假一本书都没带回家(ಥ_ಥ)
 
 嗯，一定要在这个暑假入门机器学习与神经网络，汗水从不说谎，还是要学习一个。
-
-
 
 
