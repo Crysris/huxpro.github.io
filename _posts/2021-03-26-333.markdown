@@ -1,52 +1,71 @@
 # 随笔
+
+
 ## Linux基础
+
 ### tar命令
 
+#### 参数含义解析  
 
-解压     
-`tar zxvf name.tar.gz [-C dir]`  
-压缩    
-`tar zcvf dir/name.tar.gz name.xx`  
+`z`：表示文件是被gzip压缩过的,所以要用gunzip解压(.tar不需要)  
+`x`：从tar包中把文件提取出来  
+`c`：创建一个新的打包文件  
+`v`：显示打包过程的**详细信息**  
+`f`：指定被处理的文件是什么  
+
+##### 文件后缀： `.tar.gz`  
 
 
-#### 含义解析  
+解压`tar zxvf name.tar.gz [-C dir]`  
 
-
-格式： .tar.gz
-z：表示文件是被gzip压缩过的,所以要用gunzip解压(.tar不需要)  
-x：从tar包中把文件提取出来  
-c：创建一个新的打包文件  
-v：显示打包过程的详细信息  
-f：指定被处理的文件是什么  
+压缩`tar zcvf dir/name.tar.gz name.xx` 
 
 
 
-格式：.tar
-解压     
 
-`tar sxf name.tar [-C dir]`
+##### 文件后缀：`.tar`
+     
+解压 `tar sxf name.tar [-C dir]`
 
-压缩    
+压缩 `tar dir/name.tar name.xx`
 
-`tar dir/name.tar name.xx`
-
-
+****************************************
 ## linux文件类型
 
-c char 字符设备
-
+`c char` 字符设备
 无缓冲只能顺序读取
-
-b block 块设备
+`b block` 块设备
 
 有缓冲可以随机读取
 
-l  link 符号链接文件
-f  file普通文件
-d directory 目录
+`l  link` 符号链接文件  
+`f  file`普通文件  
+`d directory` 目录
 
-
+***********************************
 ## Git基础
+
+
+
+### config
+
+`git config --global user.name=''`  
+
+`git config --global user.email=''`
+
+### 版本回退
+回退到**xx**版本 `git reset --hard xx` **xx**为commit log
+**********************************
+
+## CMake
+
+设置指定的C++编译器版本是必须的，如果不设置或为OFF，则指定版本不可用时，会使用上一版本
+
+set(cmake_cxx_standard_required on)
+set(cmake_cxx_standard 11)
+或
+
+add_definitions(-std=c++11)
 
 
 
