@@ -1,0 +1,63 @@
+---
+layout:     post
+title:      "STL"
+subtitle:   "STL"
+date:       2021-06-06 21:00:00
+author:     "Messier"
+header-img: "img/galaxy.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - C++
+    - 编程
+    - STL
+
+---
+
+# STL基础
+
+
+
+## 无序容器
+
+### unordered_set   与   unordered_map
+
+#### 定义
+
+unordered_map：存储key-value键值对，且键key不允许重复，存储的键值对是无序的
+
+unordered_set：直接存储数据value本身（也可理解为，存储的全部都是键 key 和值 value 相等的键值对）
+
+#### 示例
+
+```c++
+unordered_set<int> m_set;
+srand(int(time(nullptr)));
+unordered_set<int>::iterator iter;
+for(int i=0;i<50;i++){
+  int j=rand()%50;
+  iter=m_set.find(j);
+  if(iter==m_set.end()){
+    m_set.insert(j);
+    cout<<"new value inserted :"<<j<<" size : "<<m_set.size()<<endl;
+  }
+}
+```
+
+```c++
+unordered_map<int, double> m_map;
+unordered_map<int,double>::iterator iter;
+srand(int(time(nullptr)));
+for(int i=0;i<50;i++){
+  int j=rand()%50;
+  iter=m_map.find(j);
+  if(iter==m_map.end()){
+    double k=M_PI*pow(j,2);
+    m_map.insert({j,k});
+    cout<<fixed;
+    cout<<setprecision(2);
+    cout<<"new element inserted : {"<<j<<","<<k<<"} size : "<<m_map.size()<<endl;
+  }
+}
+```
+
