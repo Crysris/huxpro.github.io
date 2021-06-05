@@ -1,3 +1,18 @@
+---
+layout:     post
+title:      "Linux"
+subtitle:   "Linux"
+date:       2021-06-06 21:00:00
+author:     "Messier"
+header-img: "img/galaxy.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - Linux
+    - 编程
+
+---
+
 # 随笔
 
 
@@ -24,7 +39,7 @@
 
 
 ##### 文件后缀：`.tar`
-     
+
 解压 `tar sxf name.tar [-C dir]`
 
 压缩 `tar dir/name.tar name.xx`
