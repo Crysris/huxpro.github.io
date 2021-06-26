@@ -1,0 +1,87 @@
+---
+layout:     post
+title:      "位运算及n皇后"
+subtitle:   "位运算及n皇后"
+date:       2021-06-26 23:00:00
+author:     "Messier"
+header-img: "img/galaxy.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - C++
+    - 编程
+    - 位运算
+    - n皇后
+---
+
+
+
+
+
+# 位运算
+
+
+
+## 与&
+
+奇偶性
+
+```c++
+bool isOddNumber(int x){
+  return x&1;
+}
+```
+
+二进制中1的个数
+
+```c++
+int countOfbit1(int x)
+{
+   int count = 0;
+   while (x > 0)
+   {
+     count += x & 1;       
+     x >>= 1;
+   }
+   return count;
+}
+```
+
+
+
+## 异或^
+
+
+
+# n皇后
+
+![v2-a1a57c4d0f5f3a49bf2fba5e5afbc3b0_1440w](/Users/messi/Downloads/v2-a1a57c4d0f5f3a49bf2fba5e5afbc3b0_1440w.png)
+
+```c++
+void foo(int col, int ld, int rd, int limit, int &ans)
+{
+    if (col == limit)
+        ans++;
+    else
+    {
+        int pos = limit & ~(col | ld | rd);
+        while (pos)
+        {
+            int p = pos & (-pos);
+            pos ^= p;
+            foo(col | p, (ld | p) << 1, (rd | p) >> 1, limit, ans);
+        }
+    }
+}
+int totalNQueens(int n)
+{
+    int ans = 0;
+    foo(0, 0, 0, (1 << n) - 1, ans);
+    return ans;
+}
+```
+
+
+
+
+

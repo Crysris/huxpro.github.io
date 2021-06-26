@@ -16,19 +16,15 @@ tags:
 
 # STL基础
 
+## unordered_set   与   unordered_map
 
-
-## 无序容器
-
-### unordered_set   与   unordered_map
-
-#### 定义
+### 定义
 
 unordered_map：存储key-value键值对，且键key不允许重复，存储的键值对是无序的
 
 unordered_set：直接存储数据value本身（也可理解为，存储的全部都是键 key 和值 value 相等的键值对）
 
-#### 示例
+### 示例
 
 ```c++
 unordered_set<int> m_set;
@@ -60,4 +56,30 @@ for(int i=0;i<50;i++){
   }
 }
 ```
+
+## set 与 map
+
+### 定义
+
+与unordered_set，unordered_map唯一的区别就是储存的元素会根据key排序
+|     容器      | 储存机制 | 是否有序 |
+| :-----------: | -------- | -------- |
+| unordered_set | 哈希表   | 无序     |
+| unordered_map | 哈希表   | 无序     |
+|      set      | 红黑树   | 有序     |
+|      map      | 红黑树   | 有序     |
+
+
+
+## vector
+
+### 定义
+
+动态数组，可以动态分配空间，随着元素的不断插入，vector会按照自身的一套机制不断扩充自身的容量。        
+
+### 存储机制：
+
+顺序存储，vector分配的是一块连续的内存空间。
+
+vector每次提升容量时，并不是在原有连续的内存空间后再进行简单的叠加，而是重新申请一块更大的新内存，容量为现在的2倍，并把现有容器中的元素逐个复制过去，然后销毁旧的内存。这时原有指向旧内存空间的迭代器已经失效，所以当操作容器时，迭代器要及时更新。
 
