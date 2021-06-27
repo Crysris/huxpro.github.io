@@ -14,10 +14,6 @@ tags:
     - n皇后
 ---
 
-
-
-
-
 # 位运算
 
 
@@ -32,16 +28,18 @@ bool isOddNumber(int x){
 }
 ```
 
+### x=x&(x-1)：去掉x二进制表达中最后一个1
+
 二进制中1的个数
 
 ```c++
-int countOfbit1(int x)
-{
+int countOfbit1(uint32_t x)				// x 	 	1011
+{																// x-1	1010
    int count = 0;
-   while (x > 0)
+   while (x)
    {
-     count += x & 1;       
-     x >>= 1;
+     x=x&(x-1);
+     count++;
    }
    return count;
 }
@@ -49,13 +47,30 @@ int countOfbit1(int x)
 
 
 
-## 异或^
+### ^：异或
+
+### ~：按位取反
+
+### -：按位取反加1
+
+### lowbit(x)：返回二进制表达中最后一个1
+
+```c++
+int lowbit(int x) { 
+  //x=4,  	 0110
+	//-x,   	 1010
+  //return,  0010
+	return x & (-x);
+}
+```
+
+
 
 
 
 # n皇后
 
-![v2-a1a57c4d0f5f3a49bf2fba5e5afbc3b0_1440w](/Users/messi/Downloads/v2-a1a57c4d0f5f3a49bf2fba5e5afbc3b0_1440w.png)
+col | ld | rd：根据列，撇，捺筛选可用的列
 
 ```c++
 void foo(int col, int ld, int rd, int limit, int &ans)
@@ -73,6 +88,47 @@ void foo(int col, int ld, int rd, int limit, int &ans)
         }
     }
 }
+```
+
+
+
+```c++
+int pos = limit & ~(col | ld | rd);		//pos：表示所有可用的列	 00010010（1表示可用，即第2，5列）
+```
+
+pos ：0......00010010
+
+-pos：1......00010010
+
+```c++
+int p = pos & (-pos); 							 // p：表示第一个可用的位置列 00000010（表示第一个可用列为第2列）
+```
+
+```c++
+pos ^= p;														// pos：00010000（除去已用的列）
+```
+
+pos：00010010
+
+p    ：00000010
+
+```c++
+foo(col | p, (ld | p) << 1, (rd | p) >> 1, limit, ans);
+```
+
+根据使用的列，重新标记列，撇，捺
+
+对下一行的可用位置进行移动
+
+col=col | p，保持一致
+
+ld=(ld | p) << 1，左移
+
+rd=(rd | p) >> 1，右移
+
+![IMG_0702](/Users/messi/Downloads/IMG_0702.jpeg)
+
+```c++
 int totalNQueens(int n)
 {
     int ans = 0;
@@ -81,7 +137,17 @@ int totalNQueens(int n)
 }
 ```
 
+col：表示可插入皇后的列          	00000000（0表示可用）
 
+ld ：表示可插入皇后的左划线		00000000
 
+rd ：表示可插入皇后的右划线		00000000
 
+limit：											 11111111
 
+```c++
+    if (col == limit)
+        ans++;
+```
+
+col=11111111，即n列全部被填满，找到一组答案
