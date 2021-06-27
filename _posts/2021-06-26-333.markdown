@@ -126,7 +126,8 @@ ld=(ld | p) << 1，左移
 
 rd=(rd | p) >> 1，右移
 
-![IMG_0702](/Users/messi/Downloads/IMG_0702.jpeg)
+![](../img/IMG_0702.jpeg)
+
 
 ```c++
 int totalNQueens(int n)
